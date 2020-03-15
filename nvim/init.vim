@@ -20,6 +20,7 @@ set autoindent
 filetype plugin indent on
 set backspace=indent,eol,start
 set laststatus=2        " always show the statusline"
+set hidden              " allows moving away from buffers w/out saving
 
 " UI Config
 set number		          " show line numbers
