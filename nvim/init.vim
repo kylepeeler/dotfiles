@@ -4,6 +4,11 @@
 " make sense to you... if you are curious what something does further open an
 " issue or ask me in person
 
+" Plugins
+call plug#begin(expand('~/.config/nvim/plug.vim'))
+" put plugins here
+call plug#end()
+
 " Spaces & Tabs
 set tabstop=2		" number of visual spaces per TAB
 set softtabstop=2	" number of spaces in tab when editing
