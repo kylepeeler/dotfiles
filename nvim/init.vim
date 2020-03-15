@@ -6,7 +6,7 @@
 
 " Plugins
 call plug#begin(expand('~/.config/nvim/plug.vim'))
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'kylepeeler/vim-theme', { 'as': 'dracula' } " Match Dracula Pro
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
