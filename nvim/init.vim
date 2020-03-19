@@ -48,7 +48,9 @@ endif
 call plug#end()
 
 " Turn off line numbers in terminal
-autocmd TermOpen * setlocal nonumber
+augroup TerminalStuff
+  autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
 
 " Behavior 
 set splitright
