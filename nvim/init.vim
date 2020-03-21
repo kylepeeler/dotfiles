@@ -9,13 +9,12 @@ set rtp+=/usr/local/opt/fzf
 " Plugins
 call plug#begin(expand('~/.config/nvim/plug.vim'))
 Plug 'dracula/vim', { 'as': 'dracula'}
+Plug 'ntk148v/vim-horizon'
 " Plug 'kylepeeler/vim-theme', { 'as': 'dracula' } " Match Dracula Pro
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -29,7 +28,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'groenewege/vim-less'
 Plug 'ryanoasis/vim-devicons'
 Plug 'JamshedVesuna/vim-markdown-preview'
-Plug 'ap/vim-css-color'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,6 +43,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " Turn off line numbers in terminal
@@ -52,16 +52,27 @@ augroup TerminalStuff
   autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
+" Fix syntax highlighting
+let g:polyglot_disabled = ['javascript']
+
+" Make it easier to edit VIM - opens vimrc in a split
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Make it easier to load vimrc changes
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" Leave insert mode with jk
+inoremap jk <esc>
+
 " Behavior 
-set splitright
-set softtabstop=2	      " number of spaces in tab when editing
-set expandtab		        " tabs are spaces
-set shiftwidth=2
-set autoindent
-set smartindent
-set ignorecase                        " ignore case of searches
-set autoindent
-set relativenumber
+set splitright              " Split to right of active window
+set splitbelow              " Split below the window
+set softtabstop=2	    " number of spaces in tab when editing
+set expandtab		    " tabs are spaces
+set shiftwidth=2            " number of spaces to use for each step of autoindent
+set autoindent              " copy indent from current line with starting a new line 
+set smartindent             " consider braces and other syntax for indent level when starting a new line
+set ignorecase              " ignore case of searches
+set relativenumber          " display relative line numbers rather than file line numbers
+
 " filetype plugin indent on
 set backspace=indent,eol,start
 set laststatus=2        " always show the statusline"
@@ -89,15 +100,15 @@ set winminheight=0                    " splits reduced to single line.
 
 """"" LEADER COPY/CUT/PASTE/REPLACE COMMMANDS
 " copy to system clipboard
-vmap <Leader>y "+y
+vnoremap <Leader>y "+y
 " cut to system clipboard
-vmap <Leader>d "+d
+vnoremap <Leader>d "+d
 " paste from system clipboard after cursor
-vmap <Leader>p "+p
-nmap <Leader>p "+p
+vnoremap <Leader>p "+p
+nnoremap <Leader>p "+p
 " paste from system clipboard before cursor
-vmap <Leader>P "+P
-nmap <Leader>P "+P
+vnoremap <Leader>P "+P
+nnoremap <Leader>P "+P
 """""
 
 " ------------------------------------------------------------ JS
@@ -186,18 +197,18 @@ let g:prettier#autoformat = 1 " Enable auto formatting of files that have "@form
 
 
 " Bind Tab/Buffer navigation to \+[1-9]
-nmap <leader>0 <Plug>AirlineSelectTab1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>+ <Plug>AirlineSelectNextTab
+nnoremap <leader>0 <Plug>AirlineSelectTab1
+nnoremap <leader>1 <Plug>AirlineSelectTab1
+nnoremap <leader>2 <Plug>AirlineSelectTab2
+nnoremap <leader>3 <Plug>AirlineSelectTab3
+nnoremap <leader>4 <Plug>AirlineSelectTab4
+nnoremap <leader>5 <Plug>AirlineSelectTab5
+nnoremap <leader>6 <Plug>AirlineSelectTab6
+nnoremap <leader>7 <Plug>AirlineSelectTab7
+nnoremap <leader>8 <Plug>AirlineSelectTab8
+nnoremap <leader>9 <Plug>AirlineSelectTab9
+nnoremap <leader>- <Plug>AirlineSelectPrevTab
+nnoremap <leader>+ <Plug>AirlineSelectNextTab
 
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
@@ -222,9 +233,6 @@ nnoremap <Leader>ss :mksession! ~/.config/nvim/sessions/
 nnoremap <Leader>so :source ~/.config/nvim/sessions/
 nnoremap <Leader>sr :!rm ~/.config/nvim/sessions/
 
-" If more than one window and previous buffer was NERDTree, go back to it.
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-
 " Searching
 set incsearch		" search as characters are entered
 set hlsearch		" highlight matches
@@ -244,8 +252,6 @@ nnoremap <Leader>fb :BLines<CR>
 " find fuzzy in loaded buffers
 nnoremap <Leader>fl :Lines<CR>
 
-nnoremap <Leader>` 
-
 " find buffer
 " git
 nnoremap <Leader>gb :Gblame<CR>
@@ -258,10 +264,10 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " Move around windows easier
-map <C-h> :call WinMove('h')<cr>
-map <C-j> :call WinMove('j')<cr>
-map <C-k> :call WinMove('k')<cr>
-map <C-l> :call WinMove('l')<cr>
+noremap <C-h> :call WinMove('h')<cr>
+noremap <C-j> :call WinMove('j')<cr>
+noremap <C-k> :call WinMove('k')<cr>
+noremap <C-l> :call WinMove('l')<cr>
 
 " instead of having ~/.vim/coc-settings.json
 inoremap <silent><expr> <TAB>
