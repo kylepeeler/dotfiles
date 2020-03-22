@@ -4,6 +4,12 @@
 " make sense to you (assuming it is commented, may not be whoops)... 
 " if you are curious what something does further open an issue or ask me in person
 
+
+let $MODULE_LOCATION = "$HOME/dotfiles/nvim/modules"
+
+" --- Modules ---
+
+
 set rtp+=/usr/local/opt/fzf
 
 " Plugins
