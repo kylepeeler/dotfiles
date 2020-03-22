@@ -48,23 +48,39 @@ Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " Turn off line numbers in terminal
-augroup TerminalStuff
+augroup TurnOffLineNumbers 
   autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
 " Fix syntax highlighting
 let g:polyglot_disabled = ['javascript']
 
+" Learn Vim Script the hard way mappings
+" Set leader to be ,
+let mapleader = ","
+" Set local leader to be \
+let maplocalleader = "\\"
 " Make it easier to edit VIM - opens vimrc in a split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Make it easier to load vimrc changes
 nnoremap <leader>sv :source $MYVIMRC<cr>
-" Leave insert mode with jk
-inoremap jk <esc>
 
-" Behavior 
+" Change jk to be esc on insert mode 
+inoremap jk <esc>
+" Opt into jk on vmode 
+noremap <leader>jk <esc>
+" Upper case current word <c-u> when in insert mode 
+inoremap <c-u> <esc>viwU<esc>i
+" Uppercase current word <c-u> when in normal mode
+nnoremap <c-u> viwU<esc> 
+
+" Window Splits 
 set splitright              " Split to right of active window
 set splitbelow              " Split below the window
+augroup PreferToRightOpen   " Prefer opening all new windows in a vertical split
+  autocmd WinNew * wincmd L
+augroup END
+
 set softtabstop=2	    " number of spaces in tab when editing
 set expandtab		    " tabs are spaces
 set shiftwidth=2            " number of spaces to use for each step of autoindent
@@ -195,7 +211,6 @@ let g:NERDTreeGitStatusWithFlags = 1
 " FORMATTERS
 let g:prettier#autoformat = 1 " Enable auto formatting of files that have "@format" or "@prettier" tag
 
-
 " Bind Tab/Buffer navigation to \+[1-9]
 nnoremap <leader>0 <Plug>AirlineSelectTab1
 nnoremap <leader>1 <Plug>AirlineSelectTab1
@@ -257,7 +272,7 @@ nnoremap <Leader>fl :Lines<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
-" Disable Arrows because they are bad
+" Disable Arrows all together because they are bad
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -313,4 +328,4 @@ endfor
 
 if !empty(s:languageservers)
   call coc#config('languageserver', s:languageservers)
-  endif
+endif
