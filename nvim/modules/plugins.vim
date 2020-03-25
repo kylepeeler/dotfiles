@@ -28,6 +28,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'mbbill/undotree'
 Plug 'thaerkh/vim-workspace'
+Plug 'janko/vim-test'
 
 " behavior
 Plug 'vimlab/split-term.vim'
@@ -46,7 +47,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'thaerkh/vim-indentguides'
 
 " completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " languages

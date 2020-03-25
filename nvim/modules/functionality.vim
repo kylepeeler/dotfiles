@@ -30,7 +30,7 @@ set showmatch                                       " highlight maching brackets
 set magic                                           " enable extended regexes
 
 set noerrorbells                                    " disable error bells
-set visualbell                                      " disable use visual bells
+set visualbell t_vb=                                      " disable use visual bells
 
 set ttyfast                                         " more kps plz
 
@@ -55,3 +55,5 @@ let g:syntastic_check_on_wq = 0
 " fzf
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6 } }
 
+" nerdtree
+let NERDTreeShowHidden = 1

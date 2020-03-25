@@ -22,11 +22,12 @@ inoremap <c-u> <esc>viwU<esc>i
 nnoremap <c-u> viwU<esc>
 
 " Toggle terminal
-nnoremap <leader>T :Term<CR>
-nnoremap <leader>t :VTerm<CR>
+nnoremap <leader>~ :Term<CR>
+nnoremap <leader>` :VTerm<CR>
 tnoremap <Esc> <C-\><C-n>
-" open window in floating
+" open terminal window in floating
 nnoremap <Leader>+ :call CreateCenteredFloatingWindow(50, 50)<CR>:terminal<CR>a
+
 " delete buffer
 nnoremap <Leader>q :Bdelete<CR>
 
@@ -119,6 +120,12 @@ nnoremap <leader>fe :NERDTreeToggle<CR>
 " Current File
 nnoremap <leader>fa :NERDTreeFind<CR>
 
+" Vim test
+nnoremap <silent> tn :TestNearest<CR>
+nnoremap <silent> tf :TestFile<CR>
+nnoremap <silent> ts :TestSuite<CR>
+nnoremap <silent> tl :TestLast<CR>
+nnoremap <silent> tg :TestVisit<CR>
 
 " git
 nnoremap <Leader>gb :Gblame<CR>
