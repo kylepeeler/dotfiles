@@ -61,12 +61,6 @@ if has("autocmd")
   augroup END
 endif
 
-" Highlight currently open buffer in NERDTree if it is open
-augroup AutoMoveTree
-  autocmd!
-  autocmd BufEnter * call SyncTree()
-augroup END
-
 " Highlight symbol under cursor on CursorHold
 augroup CursorHighlight
   autocmd!
