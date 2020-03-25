@@ -94,25 +94,3 @@ highlight link CocErrorSign ErrorMsg
 highlight link CocInfoSign Comment
 highlight link CocWarningSign Search
 
-" -------------------------------------------------------------- Flow Config
-let s:LSP_CONFIG = {
-\  'flow': {
-\    'command': exepath('flow'),
-\    'args': ['lsp'],
-\    'filetypes': ['javascript', 'javascriptreact'],
-\    'initializationOptions': {},
-\    'requireRootPattern': 1,
-\    'settings': {},
-\    'rootPatterns': ['.flowconfig']
-\  }
-\}
-
-let s:languageservers = {}
-for [lsp, config] in items(s:LSP_CONFIG)
-  let s:not_empty_cmd = !empty(get(config, 'command'))
-  if s:not_empty_cmd | let s:languageservers[lsp] = config | endif
-endfor
-
-if !empty(s:languageservers)
-  call coc#config('languageserver', s:languageservers)
-endif

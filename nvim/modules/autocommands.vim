@@ -13,7 +13,50 @@ augroup TurnOffLineNumbers
 augroup END
 
 " Prefer to open windows in a vertical split to right
-augroup PreferOpenRight
+" augroup PreferOpenRight
+"   autocmd!
+"   autocmd WinNew * wincmd L
+" augroup END
+
+" Disable auto comments
+augroup RemoveAutoComments
   autocmd!
-  autocmd WinNew * wincmd L
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
+
+" reload changed file on focus, buffer enter
+" helps if file was changed externally.
+augroup ReloadGroup
+  autocmd!
+  autocmd! FocusGained,BufEnter * checktime
+augroup END
+
+" When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+augroup PreservingFilePosition
+  autocmd!
+  autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+if has("autocmd")
+  augroup FileTypes
+    autocmd!
+
+    " shell files
+    autocmd BufNewFile,BufRead .variables set filetype=less
+    autocmd BufNewFile,BufRead .overrides set filetype=less
+
+    if has('nvim')
+      " Don't show invisibles in the terminal. Also go into insert mode.
+      autocmd TermOpen * setlocal nolist
+      autocmd TermOpen * startinsert
+      " Go back to normal mode in the terminal once process is
+      " complete, this stops the any key to close behavior.
+      autocmd TermClose * call feedkeys("\<C-\>\<C-n>")
+    endif
+
+  augroup END
+endif

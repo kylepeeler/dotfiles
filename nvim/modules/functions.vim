@@ -49,3 +49,19 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Find out if we are in a git repo
+" Based on https://github.com/junegunn/fzf.vim/blob/master/autoload/fzf/vim.vim#L500
+function! Is_git_repo() abort
+  let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
+  return v:shell_error ? 0 : 1
+endfunction
+
+" Execute the fzf.vim "GFiles" command, or the "Files" command, if we're not
+" in a git repo.
+function! FilesOrGFiles() abort
+  if Is_git_repo()
+    exec 'GFiles'
+  else
+    exec 'Files'
+  endif
+endfunction

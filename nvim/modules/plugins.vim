@@ -4,7 +4,6 @@ set rtp+=/usr/local/opt/fzf
 " Plugins
 call plug#begin(expand('~/.config/nvim/plug.vim'))
 " file explorer
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 
 " functionality
@@ -22,11 +21,13 @@ Plug 'easymotion/vim-easymotion'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 Plug 'wellle/targets.vim'
+Plug 'moll/vim-bbye'
 Plug 'Shougo/denite.nvim'
 Plug 'chemzqm/denite-git'
 Plug 'vim-syntastic/syntastic'
-"--TODO: Plugins to deprecate
-" Plug 'w0rp/ale'
+Plug 'meain/vim-package-info', { 'do': 'npm install' }
+Plug 'mbbill/undotree'
+Plug 'thaerkh/vim-workspace'
 
 " behavior
 Plug 'vimlab/split-term.vim'
@@ -36,12 +37,13 @@ Plug 'Shougo/neoinclude.vim'
 " integrations
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rizzatti/dash.vim'
 
 " display
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'thaerkh/vim-indentguides'
 
 " completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
