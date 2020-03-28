@@ -60,9 +60,3 @@ if has("autocmd")
 
   augroup END
 endif
-
-" Highlight symbol under cursor on CursorHold
-augroup CursorHighlight
-  autocmd!
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-augroup END

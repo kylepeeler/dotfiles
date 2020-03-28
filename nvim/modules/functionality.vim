@@ -13,7 +13,8 @@ set nowritebackup
 set number                                          " show line numbers
 set relativenumber                                  " make line numbers relative
 
-set cursorline                                      " highlight current line
+" this seems to make rendering v slow...
+" set cursorline                                      " highlight current line
 
 set splitright                                      " Split to right of active window
 set splitbelow                                      " Split below the window
@@ -32,7 +33,7 @@ set magic                                           " enable extended regexes
 set noerrorbells                                    " disable error bells
 set visualbell t_vb=                                      " disable use visual bells
 
-set ttyfast                                         " more kps plz
+set ttyfast                                         " more apm's plz
 
 set updatetime=300                                  " how often to write to swap
 set shortmess+=c                                    " don't show match 1 of 2 etc. 
@@ -50,10 +51,8 @@ endif
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
-" fzf
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6 } }
 
 " nerdtree
 let NERDTreeShowHidden = 1

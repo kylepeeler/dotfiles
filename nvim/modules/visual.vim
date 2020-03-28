@@ -1,6 +1,6 @@
 " -------------------------------------------------- Visual Settings
 
-set lazyredraw                      " dont draw if you don't have to
+" set lazyredraw                      " dont draw if you don't have to
 
 if (has("termguicolors"))           " enable 24-bit color if its available
   set termguicolors

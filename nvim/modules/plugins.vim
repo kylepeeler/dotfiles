@@ -3,6 +3,7 @@ set rtp+=/usr/local/opt/fzf
 
 " Plugins
 call plug#begin(expand('~/.config/nvim/plug.vim'))
+
 " file explorer
 Plug 'preservim/nerdtree'
 
@@ -18,12 +19,9 @@ Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-conflicted'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'moll/vim-bbye'
-Plug 'Shougo/denite.nvim'
-Plug 'chemzqm/denite-git'
 Plug 'vim-syntastic/syntastic'
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'mbbill/undotree'
@@ -33,7 +31,7 @@ Plug 'janko/vim-test'
 " behavior
 Plug 'vimlab/split-term.vim'
 Plug 'tpope/vim-sleuth'
-Plug 'Shougo/neoinclude.vim'
+Plug 'camspiers/lens.vim'
 
 " integrations
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -51,9 +49,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " languages
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-Plug 'groenewege/vim-less'
-Plug 'plasticboy/vim-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'AndrewRadev/tagalong.vim'
 

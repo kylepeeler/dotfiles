@@ -79,3 +79,12 @@ function! FilesOrGFiles() abort
     exec 'Files'
   endif
 endfunction
+
+" Execute a macro over a visual range, only apply on matching lines,
+" doesn't stop at first failure
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
+

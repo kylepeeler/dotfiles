@@ -16,20 +16,17 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " change jk to be esc on insert mode
 inoremap jk <esc>
 
-" Uppercase current word <c-u> when in insert mode
-inoremap <c-u> <esc>viwU<esc>i
-" Uppercase current word <c-u> when in normal mode
-nnoremap <c-u> viwU<esc>
-
 " Toggle terminal
 nnoremap <leader>~ :Term<CR>
 nnoremap <leader>` :VTerm<CR>
+" Make it more sane to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
-" open terminal window in floating
-nnoremap <Leader>+ :call CreateCenteredFloatingWindow(50, 50)<CR>:terminal<CR>a
 
 " delete buffer
 nnoremap <Leader>q :Bdelete<CR>
+
+" 'Fly' thru buffers
+nnoremap <leader>\ :ls<CR>:b<space>
 
 " Keep next/prev in the center of the screen
 nnoremap n nzzzv
@@ -73,14 +70,14 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 
 " Move text up/down/left/right
-vnoremap <C-J> <Plug>MoveBlockDown
-vnoremap <C-K> <Plug>MoveBlockUp
-vnoremap <C-H> <Plug>MoveBlockLeft
-vnoremap <C-L> <Plug>MoveBlockRight
-nnoremap <C-J> <Plug>MoveLineDown
-nnoremap <C-K> <Plug>MoveLineUp
-nnoremap <C-L> <Plug>MoveCharRight
-nnoremap <C-H> <Plug>MoveCharLeft
+" vnoremap <C-J> <Plug>MoveBlockDown
+" vnoremap <C-K> <Plug>MoveBlockUp
+" vnoremap <C-H> <Plug>MoveBlockLeft
+" vnoremap <C-L> <Plug>MoveBlockRight
+" nnoremap <C-J> <Plug>MoveLineDown
+" nnoremap <C-K> <Plug>MoveLineUp
+" nnoremap <C-L> <Plug>MoveCharRight
+" nnoremap <C-H> <Plug>MoveCharLeft
 
 " fzf
 " nnoremap <leader>o :FZF<CR>
@@ -93,23 +90,24 @@ nnoremap <leader>fF :Files<CR>
 " find git files
 nnoremap <leader>fg :GFiles<CR>
 " find git status files
-nnoremap <leader>fmg :GFiles?
+nnoremap <leader>fmg :GFiles?<CR>
+" open editing history in fzf
+nnoremap <leader>fh :History<CR>
 " find fuzzy in buffer
 nnoremap <leader>fb :BLines<CR>
 " find fuzzy in loaded buffers
 nnoremap <leader>fl :Lines<CR>
-" ctrl-p to open files menu in fzf
-noremap <C-P> :Files<CR>
 " open Ag with ctrl-f
-noremap <C-f> :Ag<CR>
-" ctrl-t to open tags menu in fzf
-noremap <C-T> :Tags<CR>
-" ctrl-m to open editing history in fzf
-noremap <C-M> :History<CR>
+nnoremap <C-f> :Ag<CR>
+" ctrl-t to open tags in current buffer in fzf
+nnoremap <leader>ft :BTags<CR>
+" ctrl-t to open tags in current buffer
+nnoremap <leader>fT :Tags<CR>
+
 " open up ripgrep search with <space>a
 nnoremap <Leader>a :Rg<CR>
 " run ripgrep search wrapped in word boundaries 
-nnoremap <leader>F :RgWord <CR>
+nnoremap <leader>F :RgWord<CR>
 
 " Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -121,11 +119,11 @@ nnoremap <leader>fe :NERDTreeToggle<CR>
 nnoremap <leader>fa :NERDTreeFind<CR>
 
 " Vim test
-nnoremap <silent> tn :TestNearest<CR>
-nnoremap <silent> tf :TestFile<CR>
-nnoremap <silent> ts :TestSuite<CR>
-nnoremap <silent> tl :TestLast<CR>
-nnoremap <silent> tg :TestVisit<CR>
+nnoremap <silent>tn :TestNearest<CR>
+nnoremap <silent>tf :TestFile<CR>
+nnoremap <silent>ts :TestSuite<CR>
+nnoremap <silent>tl :TestLast<CR>
+nnoremap <silent>tg :TestVisit<CR>
 
 " git
 nnoremap <Leader>gb :Gblame<CR>
@@ -148,3 +146,6 @@ nnoremap ]w :lprevious<cr>
 
 " close quickfix
 nnoremap <Leader>cc :cclose<CR>
+
+" run @ to run a macro over a visual range
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
