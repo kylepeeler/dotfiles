@@ -56,3 +56,6 @@ let g:syntastic_check_on_wq = 1
 
 " nerdtree
 let NERDTreeShowHidden = 1
+
+" workspace settings
+let g:workspace_session_directory = $HOME . '/dotfiles/nvim/sessions/'
