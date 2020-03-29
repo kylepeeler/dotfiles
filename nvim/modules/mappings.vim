@@ -129,8 +129,8 @@ nnoremap <silent>tg :TestVisit<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
-" Session save/open/remove
-nnoremap <leader>s :ToggleWorkspace<CR>
+" vim-workspace mapping, toggle whether open project is a workspace
+nnoremap <leader>sw :ToggleWorkspace<CR>
 
 " Move more naturally up/down when wrapping is enabled
 nnoremap j gj
