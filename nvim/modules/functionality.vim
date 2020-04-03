@@ -14,7 +14,7 @@ set number                                          " show line numbers
 set relativenumber                                  " make line numbers relative
 
 " this seems to make rendering v slow...
-" set cursorline                                      " highlight current line
+set cursorline                                      " highlight current line
 
 set splitright                                      " Split to right of active window
 set splitbelow                                      " Split below the window
@@ -31,7 +31,7 @@ set showmatch                                       " highlight maching brackets
 set magic                                           " enable extended regexes
 
 set noerrorbells                                    " disable error bells
-set visualbell t_vb=                                      " disable use visual bells
+set visualbell t_vb=                                " disable use visual bells
 
 set ttyfast                                         " more apm's plz
 
@@ -55,7 +55,11 @@ let g:syntastic_check_on_wq = 1
 
 
 " nerdtree
-let NERDTreeShowHidden = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
 " workspace settings
 let g:workspace_session_directory = $HOME . '/dotfiles/nvim/sessions/'
+let g:workspace_persist_undo_history = 0

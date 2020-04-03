@@ -1,4 +1,4 @@
-" Make sure fzf is in run time path before installing
+"fMake sure fzf is in run time path before installing
 set rtp+=/usr/local/opt/fzf
 
 " Plugins
@@ -17,7 +17,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-conflicted'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
@@ -27,6 +26,9 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'mbbill/undotree'
 Plug 'thaerkh/vim-workspace'
 Plug 'janko/vim-test'
+Plug 'justinmk/vim-sneak'
+Plug 'junegunn/vim-peekaboo'
+Plug 'godlygeek/tabular'
 
 " behavior
 Plug 'vimlab/split-term.vim'
@@ -48,6 +50,8 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " languages
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'AndrewRadev/tagalong.vim'

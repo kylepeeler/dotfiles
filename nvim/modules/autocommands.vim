@@ -18,6 +18,9 @@ augroup END
 "   autocmd WinNew * wincmd L
 " augroup END
 
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Disable auto comments
 augroup RemoveAutoComments
   autocmd!
@@ -41,22 +44,23 @@ augroup END
 "   autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " augroup END
 
-if has("autocmd")
-  augroup FileTypes
-    autocmd!
+augroup FileTypes
+  autocmd!
 
-    " shell files
-    autocmd BufNewFile,BufRead .variables set filetype=less
-    autocmd BufNewFile,BufRead .overrides set filetype=less
+  " semantic-ui files
+  autocmd BufNewFile,BufRead .variables set filetype=less
+  autocmd BufNewFile,BufRead .overrides set filetype=less
 
-    if has('nvim')
-      " Don't show invisibles in the terminal. Also go into insert mode.
-      autocmd TermOpen * setlocal nolist
-      autocmd TermOpen * startinsert
-      " Go back to normal mode in the terminal once process is
-      " complete, this stops the any key to close behavior.
-      autocmd TermClose * call feedkeys("\<C-\>\<C-n>")
-    endif
+  if has('nvim')
+    " When in a neovim terminal, add a buffer to the existing vim session instead of nesting
+    	autocmd VimEnter * if !empty($NVIM_LISTEN_ADDRESS) && $NVIM_LISTEN_ADDRESS !=# v:servername
+              \ |let g:r=jobstart(['nc', '-U', $NVIM_LISTEN_ADDRESS],{'rpc':v:true})
+              \ |let g:f=fnameescape(expand('%:p'))
+              \ |noau bwipe
+              \ |call rpcrequest(g:r, "nvim_command", "edit ".g:f)
+              \ |call rpcrequest(g:r, "nvim_command", "call lib#SetNumberDisplay()")
+              \ |qa
+              \ |endif
+  endif
 
-  augroup END
-endif
+augroup END

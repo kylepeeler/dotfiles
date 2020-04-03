@@ -32,18 +32,25 @@ else
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [gd <Plug>(coc-diagnostic-prev)
+nmap <silent> ]gd <Plug>(coc-diagnostic-next)
 
 " Use `[qg` and `]qg` to navigate quickfix
-nmap <silent> ]qg :cn<CR>
-nmap <silent> [qg :cp<CR>
+nmap <silent> ]gq :cn<CR>
+nmap <silent> [gq :cp<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Use K to show documentation in preview window.
 function! s:show_documentation()
@@ -61,34 +68,34 @@ nmap <leader>rn <Plug>(coc-rename)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <space>A  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <Leader>A  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent> <Leader>E  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <Leader>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <Leader>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <Leader>fs  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <Leader>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <Leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent> <Leader>P  :<C-u>CocListResume<CR>
-
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_smart_case = 1
-" " Disable the candidates in Comment syntaxes.
-" call deoplete#custom#source('_',
-"             \ 'disabled_syntaxes', ['Comment'])
-
+nnoremap <silent> <Leader>rl :<C-u>CocListResume<CR> 
 " ------------------------------------------------------------ Linting/Formatting
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>sf <Plug>(coc-format-selected)
+nmap <leader>sf <Plug>(coc-format-selected)
+noremap <leader>F :Prettier
 
 highlight link CocErrorSign ErrorMsg
 highlight link CocInfoSign Comment

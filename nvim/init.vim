@@ -10,10 +10,10 @@ let $MODULE_LOCATION = "$HOME/dotfiles/nvim/modules"
 " --- Modules ---
 source $MODULE_LOCATION/plugins.vim
 source $MODULE_LOCATION/functions.vim
+source $MODULE_LOCATION/statusline.vim
 source $MODULE_LOCATION/mappings.vim
 source $MODULE_LOCATION/wildmenu.vim
 source $MODULE_LOCATION/functionality.vim
-source $MODULE_LOCATION/statusline.vim
 source $MODULE_LOCATION/terminal.vim
 source $MODULE_LOCATION/visual.vim
 source $MODULE_LOCATION/folding.vim
