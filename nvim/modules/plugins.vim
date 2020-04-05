@@ -1,4 +1,4 @@
-"fMake sure fzf is in run time path before installing
+" Make sure fzf is in run time path before installing
 set rtp+=/usr/local/opt/fzf
 
 " Plugins

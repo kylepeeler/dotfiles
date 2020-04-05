@@ -44,21 +44,21 @@ nnoremap <Leader>[ :bprev<CR>
 " <Space>] for next buffer
 nnoremap <Leader>] :bnext<CR>
 
+" Search for character under cursor with dash
+nmap <silent> <leader>d <Plug>DashSearch
+
 " Cut/Copy/Paste/Replace to System Clipboard
 " copy to system clipboard
 vnoremap <Leader>y "+y
 nnoremap <Leader>y "+y
 " cut to system clipboard
-vnoremap <Leader>d "+d
-nnoremap <Leader>d "+d
+vnoremap <Leader>D "+d
+nnoremap <Leader>D "+d
 " paste from system clipboard
 vnoremap <Leader>p "+p
 nnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
 nnoremap <Leader>P "+P
-
-" Black Hole Delete
-nnoremap <Leader>D "_d"0P
 
 " Find and replace
 nnoremap <leader>r :%s/

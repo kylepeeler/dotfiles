@@ -4,5 +4,6 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
-  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "javascript-react", "typescript"]
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "javascript-react", "typescript"],
+  "diagnostic.signOffset": 9999999
 }

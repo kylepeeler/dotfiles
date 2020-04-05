@@ -6,6 +6,9 @@ augroup reload_vimrc
   autocmd bufwritepost $MYVIMRC nested source $MYVIMRC
 augroup END
 
+" Always open help files in a rightward vertical split 
+autocmd FileType help,* wincmd L
+
 " Turn off line numbers in terminal windows
 augroup TurnOffLineNumbers
   autocmd!
