@@ -4,11 +4,11 @@ let g:fzf_tags_command = 'ctags --extra=+f -R'
 
 let g:fzf_action = {
   \ 'ctrl-q': function('BuildQuickfixList'),
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
+  \ 'ctrl-s': 'vsplit',
+  \ 'ctrl-i': 'isplit' }
 
 " fzf layout
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6 } }
+let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 
 " command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>,
 "   \ fzf#vim#with_preview({'options': ['--color', 'hl:9,hl+:14']}), <bang>0
