@@ -7,7 +7,7 @@ augroup reload_vimrc
 augroup END
 
 " Always open help files in a rightward vertical split 
-autocmd FileType help,* wincmd L
+autocmd FileType help wincmd L
 
 " Turn off line numbers in terminal windows
 augroup TurnOffLineNumbers
