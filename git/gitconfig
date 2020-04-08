@@ -43,7 +43,7 @@
     pager = less -FRSX
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     editor = nvim
-    excludesfile = /Users/kyle/.gitignore_global
+    excludesfile = ~/.gitignore_global
 
 [alias]
     # branch
