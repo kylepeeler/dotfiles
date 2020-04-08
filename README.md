@@ -10,10 +10,13 @@ If you are planning to use them for yourself, please fork it before cloning and 
 These target macOS systems.
 
 ## Package Overview
+I have put a lot of time in configuring my system in a way that works for me, and I want to maintain it's history, and share it with the world.
 
-I recently came into possession of a machine that is not _owned_ by me, but is something I will be using almost everyday for development. I created this package to serve as it's source of truth for configuration, such that I can easily transfer these settings to another machine at a moment's notice. Additionally, this will help to keep my sanity, as I can work on both my personal and work machines with settings in sync.
+Additionally, I now have multiple machines, and I want to keep a common configuration of my development enviornment synchronized and version controlled across them. 
 
-In order to support keeping multiple machines synchronized, the base config file is [idempotent](https://en.wikipedia.org/wiki/Idempotence), meaning it can be sourced multiple times without harm (only pulling the _latest_ configuration).
+In order to accomplish this, the base source file linking the configurations is [idempotent](https://en.wikipedia.org/wiki/Idempotence), meaning it can be sourced multiple times without harm (only pulling the _latest_ configuration).
+
+All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot). 
 
 ## Install Instructions
 
