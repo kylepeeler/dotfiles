@@ -13,7 +13,7 @@
     diff = auto
     grep = auto
     interactive = auto
-    pager = auto
+    pager = true
     showbranch = auto
     status = auto
     ui = auto
