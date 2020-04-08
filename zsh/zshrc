@@ -28,8 +28,8 @@ fi
 
 # Use colorls for ls if it is installed
 if `gem list colorls -i`; then 
-  alias l='colorls -lA --sd'
   alias ls='colorls -A --sd'
+  alias lsa='colorls -lA --sd'
   alias lss='colorls -A --sd --gs'
 fi
 
