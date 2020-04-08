@@ -24,6 +24,7 @@
 
 ## Possible Inspiration
 * https://github.com/driesvints/dotfiles/blob/master/Brewfile
+* https://github.com/anishathalye/dotfiles
 * https://github.com/zero-sh/zero.sh
 * https://github.com/webpro/dotfiles
 * https://github.com/holman/dotfiles
