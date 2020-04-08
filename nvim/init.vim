@@ -5,7 +5,7 @@
 " if you are curious what something does further open an issue or ask me in person
 
 
-let $MODULE_LOCATION = "$HOME/dotfiles/nvim/modules"
+let $MODULE_LOCATION = "$HOME/.config/nvim/modules"
 
 " --- Modules ---
 source $MODULE_LOCATION/plugins.vim

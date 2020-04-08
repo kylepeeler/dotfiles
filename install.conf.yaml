@@ -1,0 +1,43 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: '' 
+
+- create:
+    - ~/Development
+    - "~/Docker Data"
+    - ~/Pictures/Screenshots
+    - ~/.config/nvim/undo
+    - ~/.config/nvim/swaps
+    - ~/.config/nvim/sessions
+
+- link:
+    ~/.bin: bin
+    ~/.init: init
+    ~/.gitconfig: git/gitconfig,
+    ~/.gitignore_global: git/gitignore_global
+    ~/.iterm-profiles: iterm
+    ~/.aliases: system/aliases
+    ~/.themes: themes
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.config/nvim: nvim
+    ~/.secrets: secrets
+    ~/.ohmyzsh-custom: zsh/ohmyzsh-custom
+    ~/.zshrc: zsh/zshrc
+    ~/.fzf.zsh : zsh/.fzf.zsh
+
+- brewfile:
+    file: brew/Brewfile
+    stdout: true
+    include: ['tap', 'brew', 'cask', 'mas']
+
+- asdf:
+    - plugin: nodejs
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

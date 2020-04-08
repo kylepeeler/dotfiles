@@ -20,7 +20,7 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 
 let g:airline#extensions#coc#enabled = 1
-let g:airline#extensions#coc#error_symbol = '✘'
+let g:airline#extensions#coc#error_symbol = '✘ '
 let g:airline#extensions#coc#warning_symbol = ' '
 
 let g:airline#extensions#syntastic#enabled = 1

@@ -15,6 +15,10 @@
 * https://github.com/kcrawford/dockutil
 * https://github.com/Homebrew/homebrew-bundle 
 
+## Tool Inspiration
+* https://github.com/jondot/awesome-devenv
+* https://github.com/unixorn/awesome-zsh-plugins
+
 ## Inspiration
 * https://github.com/mathiasbynens/dotfiles
   * https://github.com/mathiasbynens/dotfiles/blob/master/.macos

@@ -13,6 +13,3 @@ set wildmode=list:longest,full
 
 " Ignore casing in autocomplete
 set wildignorecase
-
-" splits reduced to single line.
-set winminheight=0

@@ -18,6 +18,11 @@ In order to accomplish this, the base source file linking the configurations is 
 
 All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot). 
 
+## THINGS TO DO:
+* Check for handy dots in other files
+* Run through execution order, everything should work okay?
+* VS-Code?...
+
 ## Install Instructions
 
 TODO

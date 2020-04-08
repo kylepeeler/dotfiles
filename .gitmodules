@@ -2,3 +2,19 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+
+[submodule "zsh/ohmyzsh-custom/plugins/zsh-syntax-highlighting"]
+	path = zsh/ohmyzsh-custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/ohmyzsh-custom/plugins/zsh/ohmyzsh-custom/plugins/zsh-completions"]
+	path = zsh/ohmyzsh-custom/plugins/zsh/ohmyzsh-custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "zsh/ohmyzsh-custom/plugins/zsh/ohmyzsh-custom/plugins/zsh-history-substring-search"]
+	path = zsh/ohmyzsh-custom/plugins/zsh/ohmyzsh-custom/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "dotbot-brewfile"]
+	path = dotbot-brewfile
+	url = https://github.com/sobolevn/dotbot-brewfile.git
+[submodule "dotbot-asdf"]
+	path = dotbot-asdf
+	url = https://github.com/sobolevn/dotbot-asdf.git

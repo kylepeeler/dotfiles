@@ -17,3 +17,7 @@ git submodule update --remote dotbot
 ```
 
 before to commit changes before running `./install`, otherwise the old version of Dotbot will be checked out by the install script.
+
+### What is linked?
+
+The configuration for what dotbot does lives in `/init_dotfiles.sh`
