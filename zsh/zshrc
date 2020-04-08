@@ -23,7 +23,7 @@ eval $(thefuck --alias)
 
 # Set any secrets defined in .secrets
 if [ -f $HOME/.secrets ]; then
-   source $HOME/.secrets
+   source $HOME/.secrets/keys
 fi
 
 

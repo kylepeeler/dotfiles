@@ -3,12 +3,12 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/services"
 
 brew "awscli"
 brew "bat"
 brew "cloc"
 brew "coreutils"
-brew "exa"
 brew "findutils"
 brew "fontforge"
 brew "fpp"
@@ -20,9 +20,8 @@ brew "git"
 brew "gh"
 brew "gnu-sed"
 brew "gnu-time"
-brew "gnupg2"
+brew "gnupg"
 brew "hub"
-brew "hyperfine"
 brew "jq"
 brew "less"
 brew 'mackup'
@@ -33,12 +32,10 @@ brew "pv"
 brew "pyenv"
 brew "python"
 brew "reattach-to-user-namespace"
-brew "redis"
 brew "rename"
 brew "ripgrep"
 brew "shellcheck"
 brew "shpotify"
-brew "ssh-copy-id"
 brew "telnet"
 brew "thefuck"
 brew "tldr"
@@ -92,3 +89,12 @@ cask "todotxt"
 cask "visual-studio-code"
 cask "vlc"
 cask "zoomus"
+
+# Mac App Store
+mas 'Spark', id: 1176895641
+mas 'Things', id: 904280696
+mas 'Twitter', id: 1482454543
+mas 'Quip', id: 1003160018
+mas 'Pixelmator', id: 407963104
+mas 'Amphetamine', id: 937984704
+mas 'uBlock', id: 1385985095

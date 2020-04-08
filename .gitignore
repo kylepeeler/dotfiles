@@ -31,5 +31,5 @@ tags
 # End of https://www.gitignore.io/api/vim
 
 # Super secret keys only Kyle has access to
-secrets
+secrets/*
 .secrets

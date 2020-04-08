@@ -26,7 +26,9 @@
     ~/.themes: themes
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/nvim: nvim
+    ~/.aws: secrets/.aws
     ~/.secrets: secrets
+    # ~/.ssh: secrets/.ssh
     ~/.oh-my-zsh-custom: zsh/ohmyzsh-custom
     ~/.zshrc: zsh/zshrc
     ~/.fzf.zsh : zsh/.fzf.zsh
@@ -38,6 +40,7 @@
 
 - asdf:
     - plugin: nodejs
+    - plugin: python
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -7,9 +7,9 @@
 # | |\  \ |_| | |  __/ | | |  __/  __/ |  __/ |    \__ \
 # \_| \_/\__, |_|\___| \_|  \___|\___|_|\___|_|    |___/
 #         __/ |
-#         |___/        Dev Enviornment Setup Script
+#         |___/        New Dev Enviornment Provisioning Script
 
-# This is my setup script - it's heavily adapted to my usecases
+# This is my new machine setup script - it's heavily adapted to my usecases
 # The code is CC0[1] so feel free to rework and reuse as you see fit.
 
 # Extensively inspired and reworked from: 
@@ -73,26 +73,6 @@ spinner() {
 cecho() {
   echo "${2}${1}${reset}"
   return
-}
-
-cask_install() {
-  while read -r PROGRAM
-  do
-    if [ -n "$PROGRAM" ]; then
-      [[ "$PROGRAM" =~ ^#.*$ ]] && continue
-      spinner brew cask install "$PROGRAM"
-    fi
-  done
-}
-
-brew_install() {
-  while read -r PROGRAM
-  do
-    if [ -n "$PROGRAM" ]; then
-      [[ "$PROGRAM" =~ ^#.*$ ]] && continue
-      spinner brew install "$PROGRAM"
-    fi
-  done
 }
 
 dot() {
@@ -257,15 +237,6 @@ chmod +x "$HOME/dotfiles/install"
 echo "Bootstrapping with dotbot..."
 source "$HOME/dotfiles/install"
 echo "Dotfiles bootstrapped and linked!"
-
-
-######################
-# Install Python Tools
-######################
-echo "Installing global Python packages..."
-pip3 install --upgrade pip
-pip3 install --user pylint
-pip3 install --user flake8
 
 ################
 # MacOS settings

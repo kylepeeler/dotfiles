@@ -101,3 +101,4 @@ highlight link CocErrorSign ErrorMsg
 highlight link CocInfoSign Comment
 highlight link CocWarningSign Search
 
+let g:coc_global_extensions = ['coc-actions', 'coc-eslint', 'coc-highlight', 'coc-css', 'coc-flow', 'coc-html', 'coc-json', 'coc-stylelintplus', 'coc-svg']

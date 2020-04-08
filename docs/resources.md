@@ -3,10 +3,10 @@
 ## Articles/Tutorials/Helpful Links
 * https://dotfiles.github.io/
 * https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
+* https://driesvints.com/blog/getting-started-with-dotfiles/
 * https://github.com/webpro/awesome-dotfiles
 * https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789 
 * https://kalis.me/dotfiles-automating-macos-system-configuration/
-* https://driesvints.com/blog/getting-started-with-dotfiles/
 * https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449 
 
 ## Tools
@@ -24,10 +24,15 @@
   * https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 * https://github.com/wuz/.files
 * https://github.com/wuz/setup.wuz.sh
+* https://github.com/driesvints/dotfiles/
   
 
 ## Possible Inspiration
-* https://github.com/driesvints/dotfiles/blob/master/Brewfile
+* https://github.com/paulmillr/dotfiles
+* https://github.com/atomantic/dotfiles
+* https://github.com/xero/dotfiles
+* https://github.com/cowboy/dotfiles
+* https://github.com/skwp/dotfiles
 * https://github.com/anishathalye/dotfiles
 * https://github.com/zero-sh/zero.sh
 * https://github.com/webpro/dotfiles

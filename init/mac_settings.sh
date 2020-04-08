@@ -69,19 +69,19 @@ defaults write com.apple.helpviewer DevMode -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable automatic capitalization as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Disable automatic period substitution as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
 # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
@@ -196,8 +196,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 
 # Set home directory as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -206,7 +206,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+# defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -407,7 +407,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Remove useless icons from Safari’s bookmarks bar
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+# defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
@@ -469,7 +469,7 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -stri
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Disable automatic spell checking
-defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
+# defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
 ###############################################################################
 # Spotlight                                                                   #
@@ -526,7 +526,7 @@ sudo mdutil -E / > /dev/null
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
+# defaults write com.apple.terminal StringEncodings -array 4
 
 # Use dracula theme by default in Terminal.app
 osascript <<EOD
@@ -748,7 +748,7 @@ defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
 defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 
 # Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
+# defaults write com.twitter.twitter-mac openLinksInBackground -bool true
 
 # Allow closing the ‘new tweet’ window by pressing `Esc`
 defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
