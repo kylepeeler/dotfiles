@@ -8,3 +8,12 @@ I encourage you to check out the [project's documentation here](https://github.c
 Dotbot is self-contained within this repository as a git submodule, with no external dependencies and no installation required.
 
 ## Usage
+
+### Upgrading dotbot
+Since it is a submodule, running the following command should upgrade it
+
+```
+git submodule update --remote dotbot
+```
+
+before to commit changes before running `./install`, otherwise the old version of Dotbot will be checked out by the install script.
