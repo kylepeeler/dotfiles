@@ -17,10 +17,13 @@
 
 ## Inspiration
 * https://github.com/mathiasbynens/dotfiles
-    * https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+  * https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+* https://github.com/wuz/.files
+* https://github.com/wuz/setup.wuz.sh
   
 
 ## Possible Inspiration
+* https://github.com/driesvints/dotfiles/blob/master/Brewfile
 * https://github.com/zero-sh/zero.sh
 * https://github.com/webpro/dotfiles
 * https://github.com/holman/dotfiles
