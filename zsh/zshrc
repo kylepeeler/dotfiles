@@ -26,6 +26,13 @@ if [ -f $HOME/.secrets ]; then
    source $HOME/.secrets/keys
 fi
 
+# Use colorls for ls if it is installed
+if `gem list colorls -i`; then 
+  alias l='colorls -lA --sd'
+  alias ls='colorls -A --sd'
+  alias lss='colorls -A --sd --gs'
+fi
+
 
 # ------- PactSafe config:
 PACTSAFEDIR="$HOME/Development/PactSafe/"
