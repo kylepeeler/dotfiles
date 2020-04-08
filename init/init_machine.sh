@@ -252,12 +252,10 @@ dot asdf-vm/asdf.git "$HOME/.asdf" "--branch v0.7.8"
 ####################
 # Install dotfiles # 
 ####################
-echo "Cloning dotfiles..."
-spinner dot "~kylepeeler/dotfiles" "$HOME/.dotfiles" "--branch revamp"
 echo "Making dot installer executable..."
-chmod +x "$HOME/.dotfiles/install"
+chmod +x "$HOME/dotfiles/install"
 echo "Bootstrapping with dotbot..."
-source "$HOME/.dotfiles/install"
+source "$HOME/dotfiles/install"
 echo "Dotfiles bootstrapped and linked!"
 
 

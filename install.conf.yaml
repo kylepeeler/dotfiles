@@ -27,7 +27,7 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/nvim: nvim
     ~/.secrets: secrets
-    ~/.ohmyzsh-custom: zsh/ohmyzsh-custom
+    ~/.oh-my-zsh-custom: zsh/ohmyzsh-custom
     ~/.zshrc: zsh/zshrc
     ~/.fzf.zsh : zsh/.fzf.zsh
 
