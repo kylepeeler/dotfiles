@@ -1,7 +1,6 @@
 # auto-start tmux, if its not already set in the ENV, this is useful to disable tmux in VSCode by overwriting the env
-ZSH_TMUX_AUTOSTART=${ZSH_TMUX_AUTOSTART:="true"}
-
-ZSH_TMUX_AUTOSTART_ONCE="true"
+# ZSH_TMUX_AUTOSTART=${ZSH_TMUX_AUTOSTART:="true"}
+# ZSH_TMUX_AUTOSTART_ONCE="true"
 
 # do not close terminal when tmux exits
 ZSH_TMUX_AUTOQUIT="false"
@@ -22,16 +21,16 @@ export PATH=$PATH:~/.bin
 eval $(thefuck --alias)
 
 # Set any secrets defined in .secrets
-if [ -f $HOME/.secrets ]; then
+if [ -f $HOME/.secrets/keys ]; then
    source $HOME/.secrets/keys
 fi
 
 # Use colorls for ls if it is installed
-if `gem list colorls -i`; then 
-  alias ls='colorls -A --sd'
-  alias lsa='colorls -lA --sd'
-  alias lss='colorls -A --sd --gs'
-fi
+# if `gem list colorls -i`; then 
+alias ls='colorls -A --sd'
+alias lsa='colorls -lA --sd'
+alias lss='colorls -A --sd --gs'
+# fi
 
 
 # ------- PactSafe config:
@@ -168,3 +167,7 @@ source $ZSH/oh-my-zsh.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+. /Users/kpeeler/.asdf/asdf.sh
+export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"

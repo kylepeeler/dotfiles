@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "mongodb/brew"
 
 brew "awscli"
 brew "bat"
@@ -26,6 +27,7 @@ brew "jq"
 brew "less"
 brew 'mackup'
 brew 'mas' # Mac App Store manager
+brew 'mongodb'
 brew "moreutils"
 brew "neovim"
 brew "pv"
