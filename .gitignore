@@ -1,6 +1,8 @@
 nvim/plug.vim/
 nvim/undo/
 nvim/sessions/
+nvim/.netrwhist
+nvim/swaps/
 
 # Created by https://www.gitignore.io/api/vim
 # Edit at https://www.gitignore.io/?templates=vim
@@ -27,8 +29,8 @@ tags
 # Persistent undo
 [._]*.un~
 
-# Coc configuration directory
-.vim
-
 # End of https://www.gitignore.io/api/vim
 
+# Super secret keys only Kyle has access to
+secrets/*
+.secrets

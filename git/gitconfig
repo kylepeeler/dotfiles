@@ -1,0 +1,128 @@
+# Git configuration.
+
+[user]
+    name = Kyle Peeler
+    email = kylepeeler@gmail.com
+
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+
+[color]
+    branch = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    pager = true
+    showbranch = auto
+    status = auto
+    ui = auto
+
+[color "interactive"]
+    error = red bold
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+    whitespace = white reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+    branch = magenta
+
+[core]
+    pager = less -FRSX
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    editor = nvim
+    excludesfile = ~/.gitignore_global
+
+[alias]
+    # branch
+    b  = branch
+    bc = checkout -b
+    bl = branch -v
+    bL = branch -av
+    bx = branch -d
+    bX = branch -D
+    bm = branch -m
+    bM = branch -M
+    bs = show-branch
+    bS = show-branch -a
+    br = branch -v
+    # checkout
+    co  = checkout
+    # fetch
+    f   = fetch
+    fm  = pull
+    fo  = fetch origin
+    # merge
+    m   = merge
+    mom = merge origin/master
+    ms  = merge --squash
+    # push
+    p   = push
+    pa  = push --all
+    pt  = push --tags
+    # commit
+    c      = commit -v
+    ca     = commit --all -v
+    cm     = commit --message
+    cam    = commit --all --message
+    # diff
+    d    = diff          # Diff working dir to index
+    ds   = diff --staged # Diff index to HEAD
+    dc   = diff --staged # Diff index to HEAD
+    dh   = diff HEAD     # Diff working dir and index to HEAD
+    hub  = browse
+    # index
+    s  = status
+    st = status
+    a  = add
+    ia = add
+    ir = reset
+    # remote
+    re  = remote
+    rel = remote --verbose
+    rea = remote add
+    rex = remote rm
+    rem = remote rename
+    A = add -A
+    # misc
+    unstage = reset HEAD -- #take file out of staged commit
+    who = shortlog -n -s --no-merges # who has committed to this project
+    new = checkout -b
+
+[push]
+   default = matching
+
+[github]
+  user = kylepeeler
+
+[grep]
+  lineNumber = true
+
+[fetch]
+  prune = true
+
+[rebase]
+  autosquash = true
+
+[credential]
+  helper = osxkeychain
+  excludesfile = /Users/kyle/.gitignore_global
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+

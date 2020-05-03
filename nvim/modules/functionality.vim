@@ -13,7 +13,6 @@ set nowritebackup
 set number                                          " show line numbers
 set relativenumber                                  " make line numbers relative
 
-" this seems to make rendering v slow...
 set cursorline                                      " highlight current line
 
 set splitright                                      " Split to right of active window
