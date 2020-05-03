@@ -2,6 +2,7 @@ nvim/plug.vim/
 nvim/undo/
 nvim/sessions/
 nvim/.netrwhist
+nvim/swaps/
 
 # Created by https://www.gitignore.io/api/vim
 # Edit at https://www.gitignore.io/?templates=vim

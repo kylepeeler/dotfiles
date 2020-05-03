@@ -171,3 +171,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 . /Users/kpeeler/.asdf/asdf.sh
 export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

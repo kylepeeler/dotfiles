@@ -138,7 +138,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bo
 sudo systemsetup -settimezone "America/Indiana/Indianapolis" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Energy saving                                                               #
@@ -340,8 +340,8 @@ defaults write com.apple.dock autohide-delay -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
+# Make Dock icons of hidden applications not translucent
+defaults write com.apple.dock showhidden -bool false
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
