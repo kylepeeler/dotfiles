@@ -53,7 +53,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
-Plug 'JamshedVesuna/vim-markdown-preview'
+" Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'AndrewRadev/tagalong.vim'
 
 " formatters
@@ -63,7 +63,8 @@ Plug 'prettier/vim-prettier', {
 \ }
 
 " colors
-Plug 'dracula/vim', { 'as': 'dracula'}
+Plug 'haishanh/night-owl.vim'
+" Plug 'dracula/vim', { 'as': 'dracula'}
 " Plug 'kylepeeler/vim-theme', { 'as': 'dracula' } " Match Dracula Pro
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'

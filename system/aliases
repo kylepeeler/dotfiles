@@ -34,6 +34,7 @@ alias gfr="git fetch && git rebase"
 alias gb="git branch"
 alias gco="git checkout"
 alias gf="git fetch"
+alias gj="git jump"
 
 # Updates
 # alias brew_update="cd downloads && ./brewery.sh"
@@ -91,3 +92,8 @@ alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 # nvim is vim
 alias vim="nvim"
 alias v="nvim"
+
+# lazydocker
+alias lzd='lazydocker'
+alias plzd='psstart -d && lzd'
+alias hlzd='hercules-up -d && lzd'
