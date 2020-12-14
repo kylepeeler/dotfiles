@@ -12,7 +12,7 @@
 # This is my new machine setup script - it's heavily adapted to my usecases
 # The code is CC0[1] so feel free to rework and reuse as you see fit.
 
-# Extensively inspired and reworked from: 
+# Extensively inspired and reworked from:
 # https://github.com/nnja/new-computer
 # and https://github.com/wuz/setup.wuz.sh
 
@@ -132,18 +132,18 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Prerequisite: Install Brew #
 ##############################
 
-echo "Installing brew..."
+# echo "Installing brew..."
 
-if test ! "$(command -v brew)"
-then
-  ## Don't prompt for confirmation when installing homebrew
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
-fi
+# if test ! "$(command -v brew)"
+# then
+#   ## Don't prompt for confirmation when installing homebrew
+#   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
+# fi
 
-# Update brew
-echo "Updating/Upgrading Brew"
-spinner brew upgrade 
-spinner brew update 
+# # Update brew
+# echo "Updating/Upgrading Brew"
+# spinner brew upgrade
+# spinner brew update
 
 #############################################
 ### Generate ssh keys & add to ssh-agent
@@ -230,7 +230,7 @@ echo "Installing asdf..."
 dot asdf-vm/asdf.git "$HOME/.asdf" "--branch v0.7.8"
 
 ####################
-# Install dotfiles # 
+# Install dotfiles #
 ####################
 echo "Making dot installer executable..."
 chmod +x "$HOME/dotfiles/install"

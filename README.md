@@ -45,6 +45,48 @@ cd $HOME
 git clone https://github.com/kylepeeler/dotfiles
 ```
 
+1. Install dependencies:
+
+- fzf
+
+```bash
+pacman -S fzf
+```
+
+- colorls
+
+```bash
+pacman -S ruby-colorls
+
+```
+
+- [oh-my-zsh](https://ohmyz.sh)
+
+```bash
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+- [starship.rs](https://starship.rs)
+
+```bash
+curl -fsSL https://starship.rs/install.sh | bash
+```
+
+- [vim plug](https://github.com/junegunn/vim-plug)
+
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+- [asdf](https://asdf-vm.com/)
+
+```bash
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+
+
+```
+
 1. Simply run
 
 ```bash
