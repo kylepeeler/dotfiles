@@ -17,6 +17,9 @@ source $HOME/.aliases
 # Extend path to include .bin directory
 export PATH=$PATH:~/.bin
 
+# Extend path to include YARN global (why doesn't it do this implicitly...)
+export PATH="$PATH:$(yarn global bin)"
+
 #install thefuck
 eval $(thefuck --alias)
 
@@ -39,6 +42,10 @@ if [ -d "$PACTSAFEDIR/pactsafe-dot" ]; then
   source ~/Development/PactSafe/pactsafe-dot/shell_profiles/.docker_profile.sh
   source ~/Development/PactSafe/pactsafe-dot/shell_profiles/.mac_profile.sh
 fi
+
+# Set higher filewatcher limit
+# launchctl limit maxfiles 65535 200000
+ulimit -Sn 65535
 
 # Set PactSafe Shared Directory
 export PSSHARED=~/Development/PactSafe/pactsafe-shared
@@ -116,7 +123,6 @@ plugins=(
   git 
   asdf
   aws 
-  cloudapp 
   command-not-found 
   docker 
   github 
@@ -168,10 +174,19 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-. /Users/kpeeler/.asdf/asdf.sh
-export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+eval "$(starship init zsh)"
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
+source /Users/kpeeler/.asdf/asdf.sh
+export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
+
+qassh() {
+  ssh -i ~/Documents/Credentials/QA\ Env/qa_deploy.pem deploy@qa-host.pactsafe.com
+}

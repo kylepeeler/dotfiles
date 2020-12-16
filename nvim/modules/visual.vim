@@ -1,5 +1,4 @@
-" -------------------------------------------------- Visual Settings
-
+" ---- Visual Settings ----
 set lazyredraw                      " dont draw if you don't have to
 
 if (has("termguicolors"))           " enable 24-bit color if its available
@@ -8,8 +7,20 @@ endif
 
 syntax on                           " turn on syntax highlighting
 
-colorscheme dracula
-let g:dracula_italic = 1
+" ---- Theme Configuration ----
+" >> Dracula Configuration
+" colorscheme dracula
+" let g:dracula_italic = 1
+
+" >> Night Owl Configuration
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme night-owl
+let g:airline_theme='night_owl'
+
+" To enable the lightline theme
+" let g:lightline = { 'colorscheme': 'nightowl' }
 
 " Don't show the mode since airline already shows it
 set noshowmode
