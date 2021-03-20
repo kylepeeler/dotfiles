@@ -28,13 +28,6 @@ if [ -f $HOME/.secrets/keys ]; then
    source $HOME/.secrets/keys
 fi
 
-# Use colorls for ls if it is installed
-# if `gem list colorls -i`; then 
-alias ls='colorls -A --sd'
-alias lsa='colorls -lA --sd'
-alias lss='colorls -A --sd --gs'
-# fi
-
 
 # ------- PactSafe config:
 PACTSAFEDIR="$HOME/Development/PactSafe/"
@@ -45,7 +38,7 @@ fi
 
 # Set higher filewatcher limit
 # launchctl limit maxfiles 65535 200000
-ulimit -Sn 65535
+# ulimit -Sn 65535
 
 # Set PactSafe Shared Directory
 export PSSHARED=~/Development/PactSafe/pactsafe-shared
@@ -58,6 +51,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 '
+eval "$(rbenv init -)"
 
 # ------- oh-my-zsh config:
 
@@ -93,7 +87,7 @@ export UPDATE_ZSH_DAYS=7
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -131,14 +125,13 @@ plugins=(
   node 
   extract 
   npm 
-  npx 
   nvm 
   tmux 
   vscode 
   z
   fzf
-  zsh-syntax-highlighting
   history-substring-search
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -151,11 +144,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -170,7 +163,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # iTerm2 Integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -180,13 +173,22 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 eval "$(starship init zsh)"
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# Use colorls for ls if it is installed
+# if `gem list colorls -i`; then 
+alias ls='colorls'
+alias lsa='colorls -lA --sd'
+alias lss='colorls -A --sd --gs'
+# fi
 
-source /Users/kpeeler/.asdf/asdf.sh
+# Set Spaceship ZSH as a prompt
+# autoload -U promptinit; promptinit
+
+# Setup asdf
 export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
 
 qassh() {
   ssh -i ~/Documents/Credentials/QA\ Env/qa_deploy.pem deploy@qa-host.pactsafe.com
 }
+
+. /usr/local/opt/asdf/asdf.sh
+
