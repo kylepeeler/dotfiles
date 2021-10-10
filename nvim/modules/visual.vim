@@ -30,4 +30,4 @@ let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
 
 " Use pretty-jsx and disable jsx for polyglot, its not as good as pretty jsx and is older for some reason...
-let g:polyglot_disabled = ['jsx']
+" let g:polyglot_disabled = ['jsx']

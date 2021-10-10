@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # auto-start tmux, if its not already set in the ENV, this is useful to disable tmux in VSCode by overwriting the env
 # ZSH_TMUX_AUTOSTART=${ZSH_TMUX_AUTOSTART:="true"}
 # ZSH_TMUX_AUTOSTART_ONCE="true"
@@ -29,20 +34,9 @@ if [ -f $HOME/.secrets/keys ]; then
 fi
 
 
-# ------- PactSafe config:
-PACTSAFEDIR="$HOME/Development/PactSafe/"
-if [ -d "$PACTSAFEDIR/pactsafe-dot" ]; then
-  source ~/Development/PactSafe/pactsafe-dot/shell_profiles/.docker_profile.sh
-  source ~/Development/PactSafe/pactsafe-dot/shell_profiles/.mac_profile.sh
-fi
-
 # Set higher filewatcher limit
 # launchctl limit maxfiles 65535 200000
 # ulimit -Sn 65535
-
-# Set PactSafe Shared Directory
-export PSSHARED=~/Development/PactSafe/pactsafe-shared
-export DOCKER_DATA_PATH="$HOME/Docker Data"
 
 # Make fzf respect .gitignore
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/'"
@@ -122,7 +116,6 @@ plugins=(
   github 
   osx 
   brew 
-  node 
   extract 
   npm 
   nvm 
@@ -171,24 +164,44 @@ fi
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
+# Turn on starship prompt
 eval "$(starship init zsh)"
 
 # Use colorls for ls if it is installed
-# if `gem list colorls -i`; then 
-alias ls='colorls'
-alias lsa='colorls -lA --sd'
-alias lss='colorls -A --sd --gs'
-# fi
+if `gem list colorls -i`; then 
+  alias ls='colorls'
+  alias lsa='colorls -lA --sd'
+  alias lss='colorls -A --sd --gs'
+fi
 
-# Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
+# Employer Configs:
+# ------- PactSafe config:
+# Set PactSafe Directories
+export PACTSAFEDIR="$HOME/Development/PactSafe/"
+export PSSHARED=~/Development/PactSafe/pactsafe-shared
+export DOCKER_DATA_PATH="$HOME/Docker Data"
 
-# Setup asdf
-export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
+if [ -d "$PACTSAFEDIR/pactsafe-dot" ]; then
+  source ~/Development/PactSafe/pactsafe-dot/shell_profiles/.docker_profile.sh
+  source ~/Development/PactSafe/pactsafe-dot/shell_profiles/.mac_profile.sh
+fi
 
-qassh() {
-  ssh -i ~/Documents/Credentials/QA\ Env/qa_deploy.pem deploy@qa-host.pactsafe.com
-}
+# -------- Ironclad config:
+if [ -f ~/.zshrc_ironclad ]; then 
+# Load automatically generated zshrc
+  source $HOME/.zshrc_ironclad
+# Source google cloud sdk
+  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+fi
 
-. /usr/local/opt/asdf/asdf.sh
+# Configure Volta if we're using it (probably using asdf instead, IC prefers volta)
+if [ -d ~/.volta ]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
 
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
