@@ -22,6 +22,7 @@ All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot)
 
 ## TO DO:
 - [x] Run through execution order, everything should work okay?
+- [ ] fix init script
 - [ ] VS Code configuration settings
 - [ ] Flesh out documentation
 
@@ -33,32 +34,105 @@ All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot)
 xcode-select --install
 ```
 
-2. Clone this repo into the user's home directory
+2. Add SSH keys to github
+[See directions here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+3. Clone this repo into the user's home directory
 ```bash
 cd $HOME
 git clone https://github.com/kylepeeler/dotfiles
 ```
 
-3. Copy over secrets folder
+4. Copy over secrets folder
 ```bash
 <obtain the files using magic>
 cp secrets ~/dotfiles/secrets
 ```
 
+5. Install [Brew](https://brew.sh/)
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+6. Install [oh-my-zsh](https://ohmyz.sh/#install)
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+7. Install [`asdf`](https://asdf-vm.com)
+```bash
+brew install asdf
+```
+
+8. Install [`starship`](https://starship.rs)
+```bash
+brew install starship
+```
+
+9. Install `fzf`
+```
+brew install fzf
+```
+
+10. Install `tmux`
+```
+brew install tmux
+```
+
+11. Install `z`
+```
+brew install z
+```
+
+12. Install `thefuck`
+```
+brew install thefuck
+```
+
+
+
+12. Install [`node`](https://nodejs.org) and `ruby` using `asdf`
+```bash
+# For latest nodejs
+asdf install nodejs latest
+asdf global nodejs latest
+
+# For node 14
+asdf install nodejs 14.18.0
+asdf global nodejs 14.18.0
+
+# For latest ruby
+asdf install ruby latest
+asdf global ruby latest
+```
+
+11. Install [`colorls`](https://github.com/athityakumar/colorls#installation)
+```
+gem install colorls
+```
+
+12. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+<!-- TODO: FIX ME!
 4. Run the init_machine.sh script
 ```bash
 chmod +x ~/dotfiles/init/init_machine.sh
 ./dotfiles/init/init_machine.sh
-```
-
-5. Install the iTerm 2 profile
-Load the profile found in `~/.item-profiles` into iTerm
+``` -->
 
 ### Keeping changes in sync across machines
 
 Simply run
 ```
-cd ~/dotfiles && ./install
+cd ~/dotfiles
+git submodule update --remote dotbot
+git commit -am "update dotbot"
+chmod +x ./install
+./install
 ```
 
 

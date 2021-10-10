@@ -44,24 +44,24 @@
       path: zsh/zshrc
     ~/.fzf.zsh : zsh/.fzf.zsh
 
-- brewfile:
-    file: brew/Brewfile
-    stdout: true
-    include: ['tap', 'brew', 'cask', 'mas']
+# - brewfile:
+#     file: brew/Brewfile
+#     stdout: true
+#     include: ['tap', 'brew', 'cask', 'mas']
 
-- asdf:
-    - plugin: nodejs
-      global: 12.16.1
-      versions:
-        - 12.16.1
-        - 13.12.0
-        - 10.15.3
+# - asdf:
+#     - plugin: nodejs
+#       global: 12.16.1
+#       versions:
+#         - 12.16.1
+#         - 13.12.0
+#         - 10.15.3
 
-    - plugin: python
-      global: 3.8.2
-      versions:
-        - 3.8.2
-        - 2.7.17
+#     - plugin: python
+#       global: 3.8.2
+#       versions:
+#         - 3.8.2
+#         - 2.7.17
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
