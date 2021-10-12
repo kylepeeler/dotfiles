@@ -33,8 +33,8 @@
       create: true
       path: karabiner
       force: true
-    ~/.config/colorls:
-      path: colorls
+    # ~/.config/colorls:
+    #   path: colorls
     ~/.aws: secrets/.aws
     ~/.secrets: secrets
     # ~/.ssh: secrets/.ssh
