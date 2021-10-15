@@ -52,7 +52,7 @@ git clone https://github.com/kylepeeler/dotfiles
 
 ```bash
 <obtain the files using magic>
-cp secrets ~/dotfiles/secrets
+cp -r secrets ~/dotfiles/secrets
 ```
 
 1. Install [Brew](https://brew.sh/)
@@ -85,6 +85,9 @@ brew install reattach-to-user-namespace
 1. Install [`node`](https://nodejs.org) and `ruby` using `asdf`
 
 ```bash
+asdf plugin add nodejs
+asdf plugin add ruby
+
 # For latest nodejs
 asdf install nodejs latest
 asdf global nodejs latest
