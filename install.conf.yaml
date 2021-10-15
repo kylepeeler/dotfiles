@@ -21,6 +21,7 @@
     ~/.init: init
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
+    ~/.hyper.js: hyper/.hyper.js
     ~/.iterm-profiles: iterm
     ~/.aliases: system/aliases
     ~/.themes: themes
