@@ -110,7 +110,7 @@ plugins=(
   command-not-found 
   docker 
   github 
-  osx 
+  macos
   brew 
   extract 
   npm 
