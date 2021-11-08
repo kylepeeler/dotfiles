@@ -20,6 +20,7 @@
     ~/.bin: bin
     ~/.init: init
     ~/.gitconfig: git/gitconfig
+    ~/.gitconfig-zylo: git/gitconfig-zylo
     ~/.gitignore_global: git/gitignore_global
     ~/.hyper.js: hyper/.hyper.js
     ~/.iterm-profiles: iterm

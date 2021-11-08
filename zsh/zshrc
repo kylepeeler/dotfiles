@@ -163,12 +163,9 @@ fi
 # Turn on starship prompt
 eval "$(starship init zsh)"
 
-# Use colorls for ls if it is installed
-if `gem list colorls -i`; then 
-  alias ls='colorls'
-  alias lsa='colorls -lA --sd'
-  alias lss='colorls -A --sd --gs'
-fi
+alias ls='exa --icons'
+alias lsa='exa --icons -lA -sd'
+alias lss='exa --icons -A -sd -gs'
 
 # Employer Configs:
 # ------- PactSafe config:
@@ -188,6 +185,11 @@ if [ -f ~/.zshrc_ironclad ]; then
   source $HOME/.zshrc_ironclad
 # Source google cloud sdk
   source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+fi
+
+# -------- Zylo config:
+if [ -f ~/.zshrc_zylo ]; then
+  source $HOME/.zshrc_zylo
 fi
 
 # Configure Volta if we're using it (probably using asdf instead, IC prefers volta)
