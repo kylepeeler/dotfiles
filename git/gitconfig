@@ -42,7 +42,7 @@
     branch = magenta
 
 [core]
-    pager = less -FRSX
+	pager = diff-so-fancy | less --tabs=4 -RFX
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     editor = nvim
     excludesfile = ~/.gitignore_global

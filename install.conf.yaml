@@ -19,6 +19,7 @@
 - link:
     ~/.bin: bin
     ~/.init: init
+    ~/.asdfrc: asdf/asdfrc
     ~/.gitconfig: git/gitconfig
     ~/.gitconfig-zylo: git/gitconfig-zylo
     ~/.gitignore_global: git/gitignore_global

@@ -154,7 +154,7 @@ fi
 # iTerm2 Integration
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -198,6 +198,11 @@ if [ -d ~/.volta ]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+## McFly (a better ctrl-r)
+eval "$(mcfly init zsh)"
+
+## Zoxide (a better cd)
+eval "$(zoxide init zsh)"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
