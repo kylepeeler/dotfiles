@@ -53,6 +53,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
+Plug 'rust-lang/rust.vim'
 " Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'AndrewRadev/tagalong.vim'
 

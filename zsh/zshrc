@@ -201,10 +201,12 @@ fi
 ## McFly (a better ctrl-r)
 eval "$(mcfly init zsh)"
 
-## Zoxide (a better cd)
-eval "$(zoxide init zsh)"
+# ## Zoxide (a better cd)
+# eval "$(zoxide init zsh)"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
