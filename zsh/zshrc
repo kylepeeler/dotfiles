@@ -1,8 +1,5 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # auto-start tmux, if its not already set in the ENV, this is useful to disable tmux in VSCode by overwriting the env
 # ZSH_TMUX_AUTOSTART=${ZSH_TMUX_AUTOSTART:="true"}
 # ZSH_TMUX_AUTOSTART_ONCE="true"
@@ -204,9 +201,8 @@ eval "$(mcfly init zsh)"
 # ## Zoxide (a better cd)
 # eval "$(zoxide init zsh)"
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

@@ -24,9 +24,9 @@ All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot)
 ## TO DO
 
 - [x] Run through execution order, everything should work okay?
+- [x] Flesh out documentation
 - [ ] fix init script
 - [ ] VS Code configuration settings
-- [ ] Flesh out documentation
 
 ## Install Instructions
 
@@ -72,8 +72,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```bash
 brew install asdf
 brew install starship
+brew install diff-so-fancy
 brew install fzf
 brew install tmux
+brew install fig
+brew install mcfly
+brew install exa
 brew install nvim
 brew install z
 brew install thefuck
@@ -99,15 +103,20 @@ asdf global nodejs 14.18.0
 # For latest ruby
 asdf install ruby latest
 asdf global ruby latest
+
 ```
 
 1. Install [`colorls`](https://github.com/athityakumar/colorls#installation)
 
 ```bash
-gem install colorls
+# Note you may need or may not need to use sudo depending on how/where ruby is installed
+
+sudo gem install colorls
 ```
 
 1. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
+
+> ⚠️  Make sure you install the Neovim version, not normal Vim!
 
 ```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -127,10 +136,36 @@ Simply run
 
 ```bash
 cd ~/dotfiles
+
+# You may or may not need to init the dotbot submodule prior to updating
+git submodule update --init dotbot
+
+# Update to get the latest version of dotbot
 git submodule update --remote dotbot
+
+# Save/Commit against dotfiles w/ updated SHA
 git commit -am "update dotbot"
+
+# Make sure install script has permission
 chmod +x ./install
+
+# Run the install script, it will report what it does/any errors.
 ./install
+```
+
+### First Time Setup
+
+#### Configuring Neovim
+1. Make sure you close and reopen your terminal
+2. Make sure Vim-Plug was installed (TODO: automate this)
+3. Open up nvim, and run `:PlugInstall`
+
+### Fixing Fonts
+1. Make sure to install NERD fonts
+
+```bash
+brew tap homebrew/cask-fonts &&
+brew install --cask font-<FONT NAME>-nerd-font
 ```
 
 ## Further Documentation
