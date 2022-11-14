@@ -2,9 +2,7 @@
 
 [user]
     name = Kyle Peeler
-    email = kylepeeler@hey.com
-[includeIf "gitdir:~/Development/Zylo/"]
-    path = ".gitconfig-zylo"
+    email = kpeeler@apple.com
 
 [branch "master"]
     remote = origin
