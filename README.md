@@ -15,9 +15,9 @@ I have put a lot of time in configuring my system in a way that works for me, an
 
 Additionally, I now have multiple machines, and I want to keep a common configuration of my development enviornment synchronized and version controlled across them.
 
-In order to accomplish this, `./install` file linking the configurations is [idempotent](https://en.wikipedia.org/wiki/Idempotence), meaning it can be sourced multiple times without harm (only pulling the _latest_ configuration).
+In order to accomplish this, `./install` file linking the configurations is [idempotent](https://en.wikipedia.org/wiki/Idempotence), meaning it can be sourced multiple times without harm (only pulling the *latest* configuration).
 
-I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. _This is not idempotent._
+I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. *This is not idempotent.*
 
 All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot).
 
@@ -38,36 +38,37 @@ All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot)
 xcode-select --install
 ```
 
-1. Add SSH keys to github
+2. Add SSH keys to github.
+
 [See directions here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
-1. Clone this repo into the user's home directory
+3. Clone this repo into the user's home directory
 
 ```bash
 cd $HOME
 git clone https://github.com/kylepeeler/dotfiles
 ```
 
-1. Copy over secrets folder
+4. Copy over secrets folder
 
 ```bash
 <obtain the files using magic>
 cp -r secrets ~/dotfiles/secrets
 ```
 
-1. Install [Brew](https://brew.sh/)
+5. Install [Brew](https://brew.sh/)
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-1. Install [oh-my-zsh](https://ohmyz.sh/#install)
+6. Install [oh-my-zsh](https://ohmyz.sh/#install)
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-1. Install brew packages
+7. Install brew packages
 
 ```bash
 brew install asdf
@@ -86,7 +87,7 @@ brew install iconsur
 brew install reattach-to-user-namespace
 ```
 
-1. Install [`node`](https://nodejs.org) and `ruby` using `asdf`
+8. Install [`node`](https://nodejs.org) and `ruby` using `asdf`
 
 ```bash
 asdf plugin add nodejs
@@ -106,7 +107,7 @@ asdf global ruby latest
 
 ```
 
-1. Install [`colorls`](https://github.com/athityakumar/colorls#installation)
+9. Install [`colorls`](https://github.com/athityakumar/colorls#installation)
 
 ```bash
 # Note you may need or may not need to use sudo depending on how/where ruby is installed
@@ -114,7 +115,7 @@ asdf global ruby latest
 sudo gem install colorls
 ```
 
-1. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
+10. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
 
 > ⚠️  Make sure you install the Neovim version, not normal Vim!
 
@@ -156,16 +157,41 @@ chmod +x ./install
 ### First Time Setup
 
 #### Configuring Neovim
+
 1. Make sure you close and reopen your terminal
 2. Make sure Vim-Plug was installed (TODO: automate this)
 3. Open up nvim, and run `:PlugInstall`
 
-### Fixing Fonts
+#### Fixing Fonts
+
 1. Make sure to install NERD fonts
+
+#### Install the iTerm 2 profile
+
+1. Load the profile found in `~/.item-profiles` into iTerm
 
 ```bash
 brew tap homebrew/cask-fonts &&
 brew install --cask font-<FONT NAME>-nerd-font
+```
+
+#### Fix Key Repeat in VS Code
+
+Run the following commands
+
+```bash
+# For VSCode
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# For VSCode Insiders
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+
+# For VSCodium
+defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
+
+# To enable global key-repeat
+# this is helpful if you're using Vim in a PWA like code-server
+defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
 ## Further Documentation
