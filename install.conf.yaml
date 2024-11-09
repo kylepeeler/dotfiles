@@ -44,6 +44,9 @@
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+    ~/.zprofile:
+      force: true
+      path: zsh/zprofile
     ~/.fzf.zsh : zsh/.fzf.zsh
 
 - shell:
