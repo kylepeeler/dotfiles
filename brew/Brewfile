@@ -55,9 +55,6 @@ brew "zsh"
 cask "font-hack-nerd-font"
 cask "font-jetbrainsmono-nerd-font"
 
-cask "1password-cli"
-cask "1password"
-cask "alfred"
 cask "bartender"
 cask "beardedspice"
 cask "cloudapp"
@@ -93,10 +90,6 @@ cask "vlc"
 cask "zoomus"
 
 # Mac App Store
-mas 'Spark', id: 1176895641
-mas 'Things', id: 904280696
-mas 'Twitter', id: 1482454543
-mas 'Quip', id: 1003160018
-mas 'Pixelmator', id: 407963104
-mas 'Amphetamine', id: 937984704
-mas 'uBlock', id: 1385985095
+# mas 'Pixelmator', id: 407963104
+# mas 'Amphetamine', id: 937984704
+# mas 'uBlock', id: 1385985095

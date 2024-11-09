@@ -12,7 +12,7 @@
 # This is my new machine setup script - it's heavily adapted to my usecases
 # The code is CC0[1] so feel free to rework and reuse as you see fit.
 
-# Extensively inspired and reworked from: 
+# Extensively inspired and reworked from:
 # https://github.com/nnja/new-computer
 # and https://github.com/wuz/setup.wuz.sh
 
@@ -142,8 +142,8 @@ fi
 
 # Update brew
 echo "Updating/Upgrading Brew"
-spinner brew upgrade 
-spinner brew update 
+spinner brew upgrade
+spinner brew update
 
 #############################################
 ### Generate ssh keys & add to ssh-agent
@@ -226,11 +226,12 @@ echo "Vim Plug Installed! Remember to do a :PlugInstall upon launching!"
 ######################
 # Install asdf + langs
 ######################
-echo "Installing asdf..."
-dot asdf-vm/asdf.git "$HOME/.asdf" "--branch v0.7.8"
+# echo "Installing asdf..."
+# dot asdf-vm/asdf.git "$HOME/.asdf" "--branch v0.7.8"
+# TODO: swap out for mise-en-place
 
 ####################
-# Install dotfiles # 
+# Install dotfiles #
 ####################
 echo "Making dot installer executable..."
 chmod +x "$HOME/dotfiles/install"

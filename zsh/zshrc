@@ -166,11 +166,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 # export PATH=$(pyenv root)/shims:$PATH
 
-# Apple JDK stuffz
-# Disable jdk11, who needs it anymore...
-# alias jdk11='export JAVA_HOME=`/usr/libexec/java_home -v 11`'
-# export JAVA_HOME=`/usr/libexec/java_home -v 17`
-
 # GitHub Co-Pilot CLI
 # eval "$(github-copilot-cli alias -- "$0")"
 
