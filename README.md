@@ -19,20 +19,6 @@ In order to accomplish this, `./install` file linking the configurations is [ide
 
 All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot).
 
-## To-do... someday
-
-I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. *This is not idempotent.*
-
-While I have a more extensive scripts in the `init` folder including the above, and `mac_settings.sh`....
-
- Now a days, I tend to leave things at defaults, so I just selectively go through these files and run the commands that seem relevant. I will try to comment out the ones I don't use, but they are subject to change, and I don't run this file as often as I keep the base config files up to date.
-
-Someday:
-
-- [ ] Fix init script/add unit tests
-- [ ] VS Code configuration settings
-- [ ] Add list of apps to install using brew cask
-
 # Install Instructions
 
 ## Fresh macOS Install Instructions
@@ -179,6 +165,20 @@ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 # this is helpful if you're using Vim in a PWA like code-server
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
+
+## To-do... someday
+
+I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. *This is not idempotent.*
+
+While I have a more extensive scripts in the `init` folder including the above, and `mac_settings.sh`....
+
+ Now a days, I tend to leave things at defaults, so I just selectively go through these files and run the commands that seem relevant. I will try to comment out the ones I don't use, but they are subject to change, and I don't run this file as often as I keep the base config files up to date.
+
+Someday:
+
+- [ ] Fix init script/add unit tests
+- [ ] VS Code configuration settings
+- [ ] Add list of apps to install using brew cask
 
 ## Further Documentation
 
