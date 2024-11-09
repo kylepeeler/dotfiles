@@ -13,19 +13,23 @@ These target macOS systems.
 
 I have put a lot of time in configuring my system in a way that works for me, and I want to maintain it's history, and share it with the world.
 
-Additionally, I now have multiple machines, and I want to keep a common configuration of my development enviornment synchronized and version controlled across them.
+Additionally, I now have multiple machines, and I want to keep a common configuration of my development environment synchronized and version controlled across them.
 
 In order to accomplish this, `./install` file linking the configurations is [idempotent](https://en.wikipedia.org/wiki/Idempotence), meaning it can be sourced multiple times without harm (only pulling the *latest* configuration).
 
-I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. *This is not idempotent.*
-
 All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot).
 
-## TO DO
+## To Do... maybe?
 
-- [x] Run through execution order, everything should work okay?
-- [x] Flesh out documentation
-- [ ] fix init script
+I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. *This is not idempotent.*
+
+While I have a more extensive scripts in the `init` folder including the above, and `mac_settings.sh`....
+
+ Now a days, I tend to leave things at defaults, so I just selectively go through these files and run the commands that seem relevant. I will try to comment out the ones I don't use, but they are subject to change, and I don't run this file as often as I keep the base config files up to date.
+
+Someday:
+
+- [ ] Fix init script/add unit tests
 - [ ] VS Code configuration settings
 
 ## Install Instructions
@@ -45,14 +49,14 @@ xcode-select --install
 3. Clone this repo into the user's home directory
 
 ```bash
-cd $HOME
-git clone https://github.com/kylepeeler/dotfiles
+cd ~
+git clone git@github.com:kylepeeler/dotfiles.git
 ```
 
 4. Copy over secrets folder
 
 ```bash
-<obtain the files using magic>
+<obtain the files using magic/airdrop>
 cp -r secrets ~/dotfiles/secrets
 ```
 
@@ -71,10 +75,11 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 7. Install brew packages
 
 ```bash
-brew install asdf
+brew install mise
 brew install starship
 brew install diff-so-fancy
 brew install fzf
+brew install eza
 brew install tmux
 brew install fig
 brew install mcfly
@@ -87,7 +92,7 @@ brew install iconsur
 brew install reattach-to-user-namespace
 ```
 
-8. Install [`node`](https://nodejs.org) and `ruby` using `asdf`
+1. Install nodejs + set global version / configure [mise-en-place](https://mise.run)
 
 ```bash
 asdf plugin add nodejs
@@ -97,22 +102,10 @@ asdf plugin add ruby
 asdf install nodejs latest
 asdf global nodejs latest
 
-# For node 14
-asdf install nodejs 14.18.0
-asdf global nodejs 14.18.0
-
 # For latest ruby
 asdf install ruby latest
 asdf global ruby latest
 
-```
-
-9. Install [`colorls`](https://github.com/athityakumar/colorls#installation)
-
-```bash
-# Note you may need or may not need to use sudo depending on how/where ruby is installed
-
-sudo gem install colorls
 ```
 
 10. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
@@ -166,14 +159,14 @@ chmod +x ./install
 
 1. Make sure to install NERD fonts
 
-#### Install the iTerm 2 profile
+<!-- #### Install the iTerm 2 profile
 
 1. Load the profile found in `~/.item-profiles` into iTerm
 
 ```bash
 brew tap homebrew/cask-fonts &&
 brew install --cask font-<FONT NAME>-nerd-font
-```
+``` -->
 
 #### Fix Key Repeat in VS Code
 

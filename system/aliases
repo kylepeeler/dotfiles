@@ -14,12 +14,12 @@ alias gd="cd ~/Google\ Drive"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dots="cd ~/dotfiles"
-alias dev="cd ~/Development"
-alias web="cd ~/Development/Web"
+alias dev="cd ~/Developer"
+alias web="cd ~/Developer/Web"
 
 # Work Aliases
-alias pactsafe='cd ~/Development/PactSafe'
-alias psafe='cd ~/Development/PactSafe'
+alias pactsafe='cd ~/Developer/PactSafe'
+alias psafe='cd ~/Developer/PactSafe'
 
 alias hs='history | grep'
 
