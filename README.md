@@ -19,7 +19,7 @@ In order to accomplish this, `./install` file linking the configurations is [ide
 
 All files are bootstrapped with [dotbot](https://github.com/anishathalye/dotbot).
 
-## To Do... maybe?
+## To-do... someday
 
 I have also included `init/init_machine.sh` script for me to easily provision a brand new machine on a fresh copy of macOS. *This is not idempotent.*
 
@@ -32,9 +32,9 @@ Someday:
 - [ ] Fix init script/add unit tests
 - [ ] VS Code configuration settings
 
-## Install Instructions
+# Install Instructions
 
-### Fresh macOS Install Instructions
+## Fresh macOS Install Instructions
 
 1. First things first, we need git to clone this... install command line tools
 
@@ -82,7 +82,6 @@ brew install fzf
 brew install eza
 brew install tmux
 brew install mcfly
-brew install eza
 brew install nvim
 brew install z
 brew install thefuck
