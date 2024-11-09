@@ -73,12 +73,11 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```bash
 brew install asdf
 brew install starship
-brew install diff-so-fancy
+brew install delta
 brew install fzf
 brew install tmux
-brew install fig
 brew install mcfly
-brew install exa
+brew install eza
 brew install nvim
 brew install z
 brew install thefuck

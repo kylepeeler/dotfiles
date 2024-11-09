@@ -39,6 +39,7 @@ Plug 'camspiers/lens.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rizzatti/dash.vim'
+Plug 'wakatime/vim-wakatime'
 
 " display
 Plug 'vim-airline/vim-airline'

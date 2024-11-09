@@ -11,7 +11,7 @@ set nobackup
 set nowritebackup
 
 set number                                          " show line numbers
-set relativenumber                                  " make line numbers relative
+" set relativenumber                                  " make line numbers relative
 
 set cursorline                                      " highlight current line
 
