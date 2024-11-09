@@ -90,23 +90,15 @@ brew install iconsur
 brew install reattach-to-user-namespace
 ```
 
-1. Install nodejs + set global version / configure [mise-en-place](https://mise.run)
+1. Configure [mise-en-place](https://mise.jdx.dev/getting-started.html)
+
+ Install nodejs + set global version
 
 ```bash
-asdf plugin add nodejs
-asdf plugin add ruby
-
-# For latest nodejs
-asdf install nodejs latest
-asdf global nodejs latest
-
-# For latest ruby
-asdf install ruby latest
-asdf global ruby latest
-
+mise use --global node@22
 ```
 
-10. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
+1. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
 
 > ⚠️  Make sure you install the Neovim version, not normal Vim!
 
@@ -121,6 +113,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 chmod +x ~/dotfiles/init/init_machine.sh
 ./dotfiles/init/init_machine.sh
 ``` -->
+
+## Other Stuff
 
 ### Keeping changes in sync across machines
 
@@ -197,6 +191,6 @@ Suggestions/improvements welcome! If you have any, please submit an issue here.
 
 ## Special Thanks
 
-- @wuz and his dotfiles & setup script
-- @mathiasbynens dotfiles & mac setup script
+- [@wuz](https://github.com/wuz) and his dotfiles & setup script
+- [@mathiasbynens](https://github.com/mathiasbynens) dotfiles & mac setup script
 - anyone else [listed here](docs/resources.md)

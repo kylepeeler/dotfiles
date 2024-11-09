@@ -6,10 +6,10 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: '' 
+    ~/.dotfiles: ''
 
 - create:
-    - ~/Development
+    - ~/Developer
     - "~/Docker Data"
     - ~/Pictures/Screenshots
     - ~/.config/nvim/undo
@@ -21,14 +21,13 @@
     ~/.init: init
     ~/.asdfrc: asdf/asdfrc
     ~/.gitconfig: git/gitconfig
-    ~/.gitconfig-zylo: git/gitconfig-zylo
     ~/.gitignore_global: git/gitignore_global
     ~/.hyper.js: hyper/.hyper.js
     ~/.iterm-profiles: iterm
     ~/.aliases: system/aliases
     ~/.themes: themes
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.config/nvim: 
+    ~/.config/nvim:
       create: true
       path: nvim
       force: true
@@ -42,29 +41,10 @@
     ~/.secrets: secrets
     # ~/.ssh: secrets/.ssh
     ~/.oh-my-zsh-custom: zsh/ohmyzsh-custom
-    ~/.zshrc: 
+    ~/.zshrc:
       force: true
       path: zsh/zshrc
     ~/.fzf.zsh : zsh/.fzf.zsh
-
-# - brewfile:
-#     file: brew/Brewfile
-#     stdout: true
-#     include: ['tap', 'brew', 'cask', 'mas']
-
-# - asdf:
-#     - plugin: nodejs
-#       global: 12.16.1
-#       versions:
-#         - 12.16.1
-#         - 13.12.0
-#         - 10.15.3
-
-#     - plugin: python
-#       global: 3.8.2
-#       versions:
-#         - 3.8.2
-#         - 2.7.17
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
