@@ -31,6 +31,7 @@ Someday:
 
 - [ ] Fix init script/add unit tests
 - [ ] VS Code configuration settings
+- [ ] Add list of apps to install using brew cask
 
 # Install Instructions
 
