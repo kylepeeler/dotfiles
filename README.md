@@ -7,7 +7,7 @@ These are my dotfiles. Use at your own risk, they are what work for me and may u
 ***Do not blindly install them without reading every line of code.***
 If you are planning to use them for yourself, please fork it before cloning and installing.
 
-These target macOS systems.
+These target *latest* macOS systems.
 
 ## Package Overview
 
