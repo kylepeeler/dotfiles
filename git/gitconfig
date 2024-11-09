@@ -1,12 +1,18 @@
 # Git configuration.
 
 [user]
-    name = Kyle Peeler
-    email = kpeeler@apple.com
+	name = Kyle Peeler
+	email = kpeeler@apple.com
 
 [branch "master"]
     remote = origin
     merge = refs/heads/master
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
 
 [color]
     branch = auto
@@ -40,10 +46,10 @@
     branch = magenta
 
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    editor = nvim
-    excludesfile = ~/.gitignore_global
+	pager = delta
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	editor = nvim
+	excludesfile = /Users/kylepeeler/.gitignore_global
 
 [alias]
     # branch
@@ -132,6 +138,7 @@
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [diff]
+	colorMoved = default
 	tool = vscode
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
@@ -139,7 +146,7 @@
 	rebase = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

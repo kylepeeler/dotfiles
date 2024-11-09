@@ -18,9 +18,6 @@ alias dev="cd ~/Developer"
 alias web="cd ~/Developer/Web"
 
 # Work Aliases
-alias pactsafe='cd ~/Developer/PactSafe'
-alias psafe='cd ~/Developer/PactSafe'
-
 alias hs='history | grep'
 
 # Git
@@ -95,7 +92,20 @@ alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias vim="nvim"
 alias v="nvim"
 
+alias wstorm="webstorm"
+
 # lazydocker
 alias lzd='lazydocker'
 alias plzd='psstart -d && lzd'
 alias hlzd='hercules-up -d && lzd'
+
+alias recaf='/usr/bin/screen -d -m /usr/bin/caffeinate -dimsu'
+alias decaf='killall caffeinate'
+
+# This will only work on internal builds, don't try this on your computer, it won't work.
+unpincerts() {
+	  defaults write com.apple.AppleMediaServices AMSIgnoreServerTrustEvaluation 1
+    defaults write -g AppleIDAuthSupportNoPinning -bool YES
+    sudo defaults write /Library/Preferences/com.apple.security AppleServerAuthenticationNoPinning -bool YES
+	  sudo reboot
+}
