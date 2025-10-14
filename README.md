@@ -77,7 +77,7 @@ brew install iconsur
 brew install reattach-to-user-namespace
 ```
 
-1. Configure [mise-en-place](https://mise.jdx.dev/getting-started.html)
+8. Configure [mise-en-place](https://mise.jdx.dev/getting-started.html)
 
  Install nodejs + set global version
 
@@ -85,7 +85,7 @@ brew install reattach-to-user-namespace
 mise use --global node@22
 ```
 
-1. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
+9. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
 
 > ⚠️  Make sure you install the Neovim version, not normal Vim!
 
@@ -101,7 +101,7 @@ chmod +x ~/dotfiles/init/init_machine.sh
 ./dotfiles/init/init_machine.sh
 ``` -->
 
-## Other Stuff
+## Copying/Installing the .'s
 
 ### Keeping changes in sync across machines
 
